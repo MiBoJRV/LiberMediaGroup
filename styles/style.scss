@@ -122,6 +122,12 @@ form {
       //border: 2px solid transparent;
       outline: none;
     }
+    .dr-field-submit {
+      background: #ff9e1c;
+      text-transform: uppercase;
+      font-size: 15px;
+      font-weight: 700;
+    }
   }
 
   input {
@@ -134,12 +140,7 @@ form {
     border: none;
   }
 
-  .dr-field-submit {
-    background: #ff9e1c;
-    text-transform: uppercase;
-    font-size: 15px;
-    font-weight: 700;
-  }
+
 }
 
 
