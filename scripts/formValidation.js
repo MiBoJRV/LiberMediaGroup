@@ -1,4 +1,3 @@
-// Функція для створення елемента "div" з класом "error-message"
 function createErrorMessage(message) {
   const errorMessage = document.createElement('div');
   errorMessage.classList.add('error-message');
@@ -6,7 +5,6 @@ function createErrorMessage(message) {
   return errorMessage;
 }
 
-// Функція для валідації поля "First Name"
 function validateFirstName() {
   const input = document.querySelector('.dr-field-fname');
   const errorMessage = document.querySelector('.dr-field-fname-error');
@@ -31,12 +29,11 @@ function validateFirstName() {
   return true;
 }
 
-// Функція для валідації поля "Last Name"
 function validateLastName() {
   const input = document.querySelector('.dr-field-lname');
   const errorMessage = document.querySelector('.dr-field-lname-error');
 
-  const value = input.value.trim(); // Видаляємо пробіли на початку і в кінці
+  const value = input.value.trim();
 
   if (value === '' || value.length < 2 || /\d/.test(value)) {
     if (!errorMessage) {
@@ -56,12 +53,11 @@ function validateLastName() {
   return true;
 }
 
-// Функція для валідації поля "Email Address"
 function validateEmail() {
   const input = document.querySelector('.dr-field-email');
   const errorMessage = document.querySelector('.dr-field-email-error');
 
-  const value = input.value.trim(); // Видаляємо пробіли на початку і в кінці
+  const value = input.value.trim();
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const errorMessages = [];
 
@@ -85,7 +81,6 @@ function validateEmail() {
   return true;
 }
 
-// Функція для видалення попередніх повідомлень про помилки
 function removeErrorMessages(errorMessage) {
   if (errorMessage) {
     errorMessage.remove();
@@ -107,9 +102,6 @@ const emailField = document.querySelector('.dr-field-email');
 emailField.addEventListener('blur', () => {
   validateEmail();
 });
-
-
-
 
 const countrySelect = document.querySelector('.code-select');
 const phoneInput = document.querySelector('.dr-field-phone');
@@ -140,14 +132,14 @@ function validatePhoneNumber(event) {
   let errorMessage;
 
   if (truncatedInput.length < minLength || truncatedInput.length > maxLength) {
-    if (selectedCountry === 'uk') {
+    if (selectedCountry === '+44') {
       errorMessage =
         'Please enter your Phone number. Example: 7400 123456';
       phoneInput.classList.add('error');
-    } else if (selectedCountry === 'ca') {
+    } else if (selectedCountry === '+1') {
       errorMessage =
         'Please enter your Phone number. Example: 506-234-5678';
-    } else if (selectedCountry === 'au') {
+    } else if (selectedCountry === '+61') {
       errorMessage =
         'Please enter your Phone number. Example: 412 345 678';
     } else {
@@ -161,16 +153,6 @@ function validatePhoneNumber(event) {
     event.target.setCustomValidity('');
     const selectedCountryCode = countrySelect.value.toUpperCase();
     let countryCode;
-    if (selectedCountryCode === 'UK') {
-      countryCode = '44';
-    } else if (selectedCountryCode === 'CA') {
-      countryCode = '1';
-    } else if (selectedCountryCode === 'AU') {
-      countryCode = '61';
-    } else {
-      countryCode = '';
-    }
-    console.log(`Validated phone number: +${countryCode}${truncatedInput}`);
   }
   if (!errorMessage) {
     phoneInput.classList.remove('error');
@@ -194,6 +176,6 @@ countrySelect.addEventListener('change', () => {
 phoneInput.addEventListener('blur', validatePhoneNumber);
 
 updatePhonePlaceholder();
-0
+
 
 

@@ -29,6 +29,9 @@
         </li>
       </ul>
     </nav>
+    <div class="mobile__nav">
+      <img src="images/bars.svg" alt="menu">
+    </div>
     <div class="language">
       <select>
         <option value="en">English</option>
@@ -56,17 +59,15 @@
       </div>
       <div class="phone-input form__field">
         <select name="country" class="code-select">
-          <option value="none"></option>
-          <option value="uk">UK</option>
-          <option value="ca">CA</option>
-          <option value="au">AU</option>
+          <option value="none">Code</option>
+          <option value="+44">+44</option>
+          <option value="+1">+1</option>
+          <option value="+61">+61</option>
         </select>
         <input type="text" class="dr-field-phone" placeholder="Phone">
         <div class="error-message dr-field-phone-error"></div>
       </div>
-      <p class="dr-field-message" style="display: none;"></p>
       <div class="form__field">
-
         <input type="submit" class="dr-field-submit" id="submit_btn" value="Register securely now ">
       </div>
     </form>
@@ -75,63 +76,72 @@
 </section>
 
 <footer>
-  <nav>
-    <ul>
-      <li>
-        <a href="#">About Us</a>
-      </li>
-      <li>
-        <a href="#">Contact Us</a>
-      </li>
-      <li>
-        <a href="#">Login</a>
-      </li>
-    </ul>
-  </nav>
-  <div class="footer__main">
-    <div>
-      <p>
-        We operate with multiple 3rd parties and may pass your personal information not only to the firm described on
-        the
-        site, but also to other 3rd parties, including non-affiliated crypto-currency trading affiliates, and transfer
-        or
-        release your private data for marketing or business purposes. These third parties may use this data to contact
-        you
-        or to carry out their own business operations and purposes.
-      </p>
-      <p>
-        Key note on risk: Trading can produce large profits; however, it also involves the risk of losing some or all of
-        the funds, and should be contemplated by the initial investors. Approximately 70% of investors will eventually
-        lose money. Please read our terms and conditions and disclaimer page carefully before investing.
-      </p>
-    </div>
-    <div class="social">
-      <a href="#">
-        <img src="images/twitter.svg" alt="twitter-icon">
-      </a>
-    </div>
-    <div class="contacts">
-      <a href="tel:+447418358115">+447418358115</a>
-    </div>
-    <div class="footer__bottom">
+  <div class="footer__bg-color"></div>
+  <div class="footer__content">
+    <nav>
+      <ul>
+        <li>
+          <a href="#">About Us</a>
+        </li>
+        <li>
+          <a href="#">Contact Us</a>
+        </li>
+        <li>
+          <a href="#">Login</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="footer__main">
+      <div class="footer__text-wrapper">
+        <div class="footer__text">
+          <p>
+            We operate with multiple 3rd parties and may pass your personal information not only to the firm described on
+            the
+            site, but also to other 3rd parties, including non-affiliated crypto-currency trading affiliates, and transfer
+            or
+            release your private data for marketing or business purposes. These third parties may use this data to contact
+            you
+            or to carry out their own business operations and purposes.
+          </p>
+          <p>
+            Key note on risk: Trading can produce large profits; however, it also involves the risk of losing some or all of
+            the funds, and should be contemplated by the initial investors. Approximately 70% of investors will eventually
+            lose money. Please read our terms and conditions and disclaimer page carefully before investing.
+          </p>
+        </div>
+        <div class="footer__contact">
+          <div class="social">
+            <a href="#">
+              <img src="images/twitter.svg" alt="twitter-icon">
+            </a>
+          </div>
+          <div class="contacts">
+            <a href="tel:+447418358115">+447418358115</a>
+          </div>
+        </div>
+      </div>
 
-      <div class="copyrights">
-        <p>Copyrights © </p>
-        <p>2022 All Rights Reserved.</p>
-        <p>
-          <a href="mailto:support@biticodes.com">support@biticodes.com</a>
-        </p>
-      </div>
-      <div class="address">
-        L.P.C Funnels PTE. LTD
-        Ang Mo Kio Avenue 5 #01-01, #01-07/11, #02-02/03 Singapore
-      </div>
-      <div class="policy">
-        <a href="#" target="_blank">Privacy Policy </a>
-        <a href="#" target="_blank">Terms of Use </a>
+      <div class="footer__bottom">
+
+        <div class="copyrights">
+          <p>Copyrights © </p>
+          <p>2022 All Rights Reserved.</p>
+          <p>
+            <a href="mailto:support@biticodes.com">support@biticodes.com</a>
+          </p>
+        </div>
+        <div class="address">
+          L.P.C Funnels PTE. LTD <br>
+          Ang Mo Kio Avenue 5 #01-01, #01-07/11, #02-02/03 Singapore
+        </div>
+        <div class="policy">
+          <a href="#" target="_blank">Privacy Policy </a>
+          <a href="#" target="_blank">Terms of Use </a>
+        </div>
       </div>
     </div>
   </div>
+
 </footer>
 <!--<script-->
 <!--    window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"><\/script>')-->
@@ -139,8 +149,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://tracker.doctor-mailer.com/tracker.js"></script>
 
-<script src="scripts/script.js"></script>
 <script src="scripts/formValidation.js"></script>
+<script src="scripts/script.js"></script>
 
 </body>
 </html>

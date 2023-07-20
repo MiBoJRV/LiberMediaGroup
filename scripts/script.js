@@ -6,7 +6,8 @@ function sendLeadData(event) {
   const lastName = form.querySelector('.dr-field-lname').value;
   const email = form.querySelector('.dr-field-email').value;
   const phoneNumber = form.querySelector('.dr-field-phone').value;
-
+  const phoneCode = document.querySelector('.code-select').value;
+  const fullNumber = `${phoneCode}${phoneNumber}`;
 
   const payload = {
     ApiKey: 'TlRZNE5GODFNVEJmTlRZNE5GOD0=',
@@ -15,12 +16,12 @@ function sendLeadData(event) {
     FirstName: firstName,
     LastName: lastName,
     Email: email,
-    PhoneNumber: phoneNumber,
+    PhoneNumber: fullNumber,
   };
 
-  // Proxy server URL
+
   const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-  // Target API URL
+
   const apiUrl = 'https://tracker.pablo.partners/repost.php?act=register';
 
   fetch(`${proxyUrl}${apiUrl}`, {
@@ -44,7 +45,17 @@ function sendLeadData(event) {
 }
 
 const form = document.getElementById('mypost');
-form.addEventListener('submit', sendLeadData);
+// form.addEventListener('submit', sendLeadData);
 
+form.addEventListener('submit', (event) => {
 
-
+  const isFirstNameValid = validateFirstName();
+  const isLastNameValid = validateLastName();
+  const isEmailValid = validateEmail();
+  const isPhoneNumberValid = phoneInput.dispatchEvent(new Event('blur'));
+  if (isFirstNameValid && isLastNameValid && isEmailValid && isPhoneNumberValid) {
+    sendLeadData(event);
+  } else {
+    console.log('`Not all required fields are correct');
+  }
+});
