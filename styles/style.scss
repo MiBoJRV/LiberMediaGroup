@@ -1,8 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  padding: 0 5%;
+  margin-top: 40px;
+
+  .logo {
+    img {
+      width: 80%;
+    }
+  }
+
+  .navigation {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    nav {
+      ul {
+        display: flex;
+        justify-content: space-between;
+        gap: 28px;
+      }
+
+      a {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #ffffff;
+
+        &:hover {
+          color: #7d8c9a;
+        }
+      }
+    }
+
+    .language {
+      select {
+        width: 182px;
+        height: 28px;
+      }
+    }
+  }
+
+
+}
+
+.register__form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../images/bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  margin-top: -10%;
+  padding: 10%;
+
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 60px;
+    color: #fff;
+    text-align: center;
+    max-width: 1040px;
+    width: 100%;
+    padding: 0 5%;
+    margin-bottom: 20px;
+  }
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .form__field {
+    position: relative;
+
+    .phone-input {
+      display: flex;
+      align-items: center;
+
+    }
+    .code-select {
+      height: 51px;
+      margin-bottom: 18px;
+      padding: 0 16px;
+      border: 2px solid transparent;
+      outline: none;
+    }
+  }
+
+  input {
+    width: 100%;
+    height: 51px;
+    margin-bottom: 18px;
+    padding: 0 16px;
+    border: 2px solid transparent;
+    outline: none;
+  }
+}
+
+
+.error {
+  border: 2px solid red;
+}
+
+.error-message {
+  position: absolute;
+  color: red;
+  font-weight: 700;
+  bottom: 3px;
+  font-size: 10px;
 }
 
 footer {
-  background-image: url("images/footer_bg.jpeg");
+  margin-top: auto;
+  background-image: url("../images/footer_bg.jpeg");
+  color : #ffffff;
+
+  a {
+    color : #ffffff;
+  }
+
+  img {
+    width: 25px;
+    height: 25px;
+  }
 }

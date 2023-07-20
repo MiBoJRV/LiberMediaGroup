@@ -15,39 +15,59 @@
       <img src="images/logo.png" alt="logo">
     </a>
   </div>
-  <nav>
-    <ul>
-      <li>
-        <a href="#">About Us</a>
-      </li>
-      <li>
-        <a href="#">Contact Us</a>
-      </li>
-      <li>
-        <a href="#">Login</a>
-      </li>
-    </ul>
-  </nav>
-  <div class="language">
-    English
+  <div class="navigation">
+    <nav>
+      <ul>
+        <li>
+          <a href="#">About Us</a>
+        </li>
+        <li>
+          <a href="#">Contact Us</a>
+        </li>
+        <li>
+          <a href="#">Login</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="language">
+      <select>
+        <option value="en">English</option>
+        <option value="fr">French</option>
+      </select>
+    </div>
   </div>
+
 </header>
 
 <section class="register__form">
   <div class="register__form-wrapper">
-   <h1>
-     Biticodes & BTC iPlex Pro App - AI powered crypto trading bot for beginners & advance traders alike.
-   </h1>
+    <h1>
+      Biticodes & BTC iPlex Pro App - AI powered crypto trading bot for beginners & advance traders alike.
+    </h1>
     <form method="post" id="mypost" action="" class="dr-form">
-      <input type="text"   class="dr-field-fname"   placeholder="First Name"><BR>
-      <input type="text"   class="dr-field-lname"   placeholder="Last Name"><BR>
-      <input type="text"   class="dr-field-email"   placeholder="Email Address"><BR>
-      <input type="tel"    class="dr-field-phone"   placeholder="Phone"><BR>
-
-      <p class="dr-field-message" style="display: none;"> </p>
-
+      <div class="form__field">
+        <input type="text" class="dr-field-fname" placeholder="First Name">
+      </div>
+      <div class="form__field">
+        <input type="text" class="dr-field-lname" placeholder="Last Name">
+      </div>
+      <div class="form__field">
+        <input type="text" class="dr-field-email" placeholder="Email Address">
+      </div>
+      <div class="phone-input form__field">
+        <select name="country" class="code-select">
+          <option value="none"></option>
+          <option value="uk">UK</option>
+          <option value="ca">CA</option>
+          <option value="au">AU</option>
+        </select>
+        <input type="text" class="dr-field-phone" placeholder="Phone">
+        <div class="error-message dr-field-phone-error"></div>
+      </div>
+      <p class="dr-field-message" style="display: none;"></p>
       <input type="submit" class="dr-field-submit" id="submit_btn" value="Submit!">
     </form>
+
   </div>
 </section>
 
@@ -110,6 +130,14 @@
     </div>
   </div>
 </footer>
+<!--<script-->
+<!--    window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"><\/script>')-->
+<!--</script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://tracker.doctor-mailer.com/tracker.js"></script>
+
 <script src="scripts/script.js"></script>
+<script src="scripts/formValidation.js"></script>
+
 </body>
 </html>

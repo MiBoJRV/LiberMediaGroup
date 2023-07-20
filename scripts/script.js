@@ -1,12 +1,21 @@
-const sendData = () => {
-  const formData = {
-    "ApiKey": "TlRZNE5GODFNVEJmTlRZNE5GOD0=",
-    "ApiPassword": "ZTLV6Ava1J",
-    "CampaignID": 8286,
-    "FirstName": "John",
-    "LastName": "Doe",
-    "Email": "johndoe@example.com",
-    "PhoneNumber": "1234567890"
+function sendLeadData(event) {
+  event.preventDefault();
+
+  const form = document.getElementById('mypost');
+  const firstName = form.querySelector('.dr-field-fname').value;
+  const lastName = form.querySelector('.dr-field-lname').value;
+  const email = form.querySelector('.dr-field-email').value;
+  const phoneNumber = form.querySelector('.dr-field-phone').value;
+
+
+  const payload = {
+    ApiKey: 'TlRZNE5GODFNVEJmTlRZNE5GOD0=',
+    ApiPassword: 'ZTLV6Ava1J',
+    CampaignID: '8286',
+    FirstName: firstName,
+    LastName: lastName,
+    Email: email,
+    PhoneNumber: phoneNumber,
   };
 
   // Proxy server URL
@@ -14,28 +23,28 @@ const sendData = () => {
   // Target API URL
   const apiUrl = 'https://tracker.pablo.partners/repost.php?act=register';
 
-  // Send the form data via HTTP POST using fetch with the proxy server
   fetch(`${proxyUrl}${apiUrl}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(formData)
+    body: JSON.stringify(payload)
   })
-    .then(response => response.json())
-    .then(data => {
-      // Process the response as needed
-      console.log(data);
+    .then(response => {
+      if (response.ok) {
+        console.log('Lead data sent successfully!');
+        form.reset();
+      } else {
+        throw new Error('Failed to send lead data');
+      }
     })
     .catch(error => {
-      // Handle any errors that occur during the request
-      console.error('Error:', error);
+      console.error('An error occurred while sending lead data:', error.message);
     });
-};
+}
 
-// Attach the sendData function to the form submit event
 const form = document.getElementById('mypost');
-form.addEventListener('submit', event => {
-  event.preventDefault(); // Prevent the default form submission
-  sendData(); // Call the sendData function to send the form data
-});
+form.addEventListener('submit', sendLeadData);
+
+
+
