@@ -106,17 +106,19 @@ form {
 
   .form__field {
     position: relative;
+    max-width: 868px;
+    margin: 0 auto;
+    width: 100%;
 
-    .phone-input {
+    &.phone-input {
       display: flex;
-      align-items: center;
 
     }
     .code-select {
       height: 51px;
       margin-bottom: 18px;
       padding: 0 16px;
-      border: 2px solid transparent;
+      //border: 2px solid transparent;
       outline: none;
     }
   }
@@ -125,15 +127,17 @@ form {
     width: 100%;
     height: 51px;
     margin-bottom: 18px;
-    padding: 0 16px;
-    border: 2px solid transparent;
+    //padding: 0 16px;
+    //border: 2px solid transparent;
     outline: none;
+    border: none;
   }
 }
 
 
 .error {
-  border: 2px solid red;
+  //border: 2px solid red;
+  outline: 2px solid red;
 }
 
 .error-message {
