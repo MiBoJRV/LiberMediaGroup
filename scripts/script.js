@@ -19,11 +19,11 @@ function sendLeadData(event) {
   };
 
   // Proxy server URL
-  // const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+  const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
   // Target API URL
   const apiUrl = 'https://tracker.pablo.partners/repost.php?act=register';
 
-  fetch(`${apiUrl}`, {
+  fetch(`${proxyUrl}${apiUrl}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
