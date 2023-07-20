@@ -114,6 +114,7 @@ form {
       display: flex;
 
     }
+
     .code-select {
       height: 51px;
       margin-bottom: 18px;
@@ -131,6 +132,13 @@ form {
     //border: 2px solid transparent;
     outline: none;
     border: none;
+  }
+
+  .dr-field-submit {
+    background: #ff9e1c;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
   }
 }
 
@@ -151,10 +159,10 @@ form {
 footer {
   margin-top: auto;
   background-image: url("../images/footer_bg.jpeg");
-  color : #ffffff;
+  color: #ffffff;
 
   a {
-    color : #ffffff;
+    color: #ffffff;
   }
 
   img {

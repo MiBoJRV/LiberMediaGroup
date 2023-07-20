@@ -109,6 +109,12 @@ form input {
   outline: none;
   border: none;
 }
+form .dr-field-submit {
+  background: #ff9e1c;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 700;
+}
 
 .error {
   outline: 2px solid red;
